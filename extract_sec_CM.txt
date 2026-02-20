@@ -1,0 +1,102 @@
+\label{sec:CM}
+We demonstrate our approach with Configuration Model (CM) networks.  A CM network is static with a known degree distribution (the distribution of the number of contacts).  We create a CM network with $N$ nodes as follows:  We assign each node $u$ its degree $k_u$ with probability $P(k_u)$ and give it $k_u$ \emph{stubs} (half-edges).  Once all nodes are assigned stubs, we pair stubs randomly into edges.  The probability a randomly selected node $u$ has degree $k$ is $P(k)$. In contrast, the probability a stub of $u$ connects to some stub of $v$ is proportional to $k_v$.  So the probability a randomly selected neighbor of $u$ has degree $k$ is 
+\[
+P_n(k)=k P(k)/\ave{K}
+\]
+See~\cite{feld:friends,meyers:sars} for more detail.
+
+We assume the disease transmits from an infected node to a neighbor at rate $\beta$.  If the neighbor is susceptible, it becomes infected.  Infected nodes recover at rate $\gamma$.  Throughout, we assume a large population, small initial proportion infected, the small initial proportion of stubs belonging to infected nodes, and growing outbreak.  Our equations become correct once the number of infections $NI$ has grown large enough to behave deterministically, while the proportion infected $I$ is still small.  While stochastic effects are important, other methods such as branching process approximations~\cite{diekmann:textbook} (which apply in large populations with small numbers infected) maybe more useful.
+
+To calculate $S(t)$, $I(t)$, and $R(t)$ we note that these are the probabilities a random \emph{test node} $u$ is in each state.  We calculate $S(t)$ by noting it is also 
+the probability none of $u$'s neighbors has yet transmitted to $u$.   We would like to treat each neighbor as independent, but the probability one neighbor $v$ has become infected is affected by whether another neighbor $w$ of $u$ has transmitted to $u$ since $u$ could infect $v$.  Accounting for this directly requires considerable bookkeeping.  
+%perform our calculations conditional on the assumption that $u$ has not yet been infected.  However, 
+A simpler approach removes the correlation by assuming $u$ causes no infections.  This does not alter the state of $u$: the probabilities we calculate for $u$ will be the proportion of the population in each state under the original assumption $u$ behaves as any other node, and so this yields an equivalent problem.  Further discussion of this modification is in the Appendix.
+
+\begin{figure}
+\parbox{\textwidth}{\parbox{0.5\textwidth}{\scalebox{0.95}{\begin{picture}(0,0)%
+\includegraphics{edgeflux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,1833)(2026,-3544)
+\put(2429,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_S=\frac{\psi'(\theta)}{\psi'(1)}$}%
+}}}}
+\put(3974,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_I$}%
+}}}}
+\put(3974,-3310){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1-\theta$}%
+}}}}
+\put(5511,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_R$}%
+}}}}
+%\put(3177,-2274){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\beta \phi_I \frac{\psi''(\theta)}{\psi'(1)}$}%
+%}}}}
+\put(4732,-2224){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma\phi_I$}%
+}}}}
+\put(4181,-2674){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\beta\phi_I$}%
+}}}}
+\end{picture}%
+}} \hfill
+\parbox{0.5\textwidth}{\scalebox{0.95}{\begin{picture}(0,0)%
+\includegraphics{standardflux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,550)(1651,-1886)
+\put(2038,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$S=\psi(\theta)$}%
+}}}}
+\put(3589,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$I$}%
+}}}}
+\put(5140,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$R$}%
+}}}}
+\put(4382,-1509){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma I$}%
+}}}}
+\end{picture}%
+}}} 
+\caption{\footnotesize \textbf{Edge-based compartmental modeling for Configuration Model networks.} The flow diagram for a static CM network. (Left) The $\phi_S$, $\phi_I$, and $\phi_R$ compartments represent the probability that a neighbor is susceptible, infected, or recovered and has not transmitted infection. The $1-\theta$ compartment is the probability it has transmitted.  The fluxes between the $\phi$ compartments result from infection or recovery of a neighbor of the test node and the $\phi_I$ to $1-\theta$ flux results from a neighbor transmitting infection to the test node.  (Right) $S$, $I$, and $R$ represent the proportion of the population susceptible, infected, and recovered.  We can find $S$ explicitly, and $I$ and $R$ follow as in the MA model.}
+\label{fig:CM}
+\end{figure}
+
+We define $\theta(t)$ to be the probability a randomly chosen neighbor has not transmitted to $u$.  Initially $\theta$ is close to $1$.  For large CM networks, neighbors of $u$ are independent. So given its degree $k$, $u$ is susceptible at time $t$ with probability $s(k,\theta(t)) = \theta(t)^k$.  Thus $S(t) = \sum_k P(k) s(k,\theta(t))= \psi(\theta(t))$ where
+\[
+\psi(x) = \sum_k P(k) x^k
+\]
+is the probability generating function~\cite{gf} of the degree distribution [the properties of $\psi$ we use are that its derivative is $\sum_k k P(k) x^{k-1}$, its second derivative is $\sum_k k(k-1)P(k)x^{k-2}$, and $\psi'(1)=\ave{K}$].  For many important probability distributions, $\psi$ takes a simple form, which simplifies our examples.  Combining with the flow diagram for $S$, $I$, and $R$ in figure~\ref{fig:CM}, we have
+\[
+\dot{R} = \gamma I \, ,\qquad\qquad S = \psi(\theta) \, , \qquad\qquad I = 1-S-R
+\]
+%Explicitly, this states that the rate of change of $R$ is the per-infected recovery rate times the number of infecteds, the probability an individual is susceptible is $\psi(\theta)$, and the probability an individual is infected is the probability it is neither susceptible nor recovered.  These observations are universal for networks considered in this paper.
+To calculate the new variable $\theta$, 
+%This is the probability at time $t$ that the stub connecting $u$ to a neighbor $v$ has not transmitted infection to $u$.  
+we break it into three parts; the probability a neighbor $v$ is susceptible at time $t$, $\phi_S$; the probability $v$ is infected at time $t$ but has not transmitted infection to $u$, $\phi_I$; and the probability $v$ has recovered by time $t$ but did not transmit infection to $u$, $\phi_R$.  Then $\theta = \phi_S+\phi_I+\phi_R$.  Initially $\phi_S$ and $\theta$ are approximately $1$ and $\phi_I$, $\phi_R$ are small (they sum to $\theta-\phi_S$). The flow diagram for $\phi_S$, $\phi_I$, $\phi_R$, and $1-\theta$ (figure~\ref{fig:CM}) shows the probability fluxes between these compartments.  %It is straightforward to calculate the $\phi_I$ to $1-\theta$ flux.  
+The rate an infected neighbor transmits to $u$ is $\beta$ so the $\phi_I$ to $1-\theta$ flux is $\beta \phi_I$.  We conclude $\dot{\theta} = -\beta \phi_I$.  To find $\phi_I$ we will use $\phi_I = \theta-\phi_S-\phi_R$ and calculate $\phi_S$ and $\phi_R$ explicitly.
+
+%The probability a neighbor of $u$ has recovered without transmitting infection to $u$ can be calculated in terms of $\theta$.  We first note that the flux from $\phi_I$ to $\phi_R$ is $\gamma \phi_I$, which is proportional to the flux to $1-\theta$, 
+The rate an infected neighbor recovers is $\gamma$.  Thus the $\phi_I$ to $\phi_R$ flux is $\gamma\phi_I$.  This is proportional to the flux into $1-\theta$ with the constant of proportionality $\gamma/\beta$.  That is, $\dot{\phi}_R = \gamma \phi_I$, \ $\diff{}{t}(1-\theta) = \beta \phi_I$.
+Since $\phi_R$ and $1-\theta$ both begin as approximately $0$, we have $\phi_R=\gamma(1-\theta)/\beta$ in the large population limit.
+To find $\phi_S$, recall a neighbor $v$ has degree $k$ with probability $P_n(k)=kP(k)/\ave{K}$.  Given $k$, $v$ is susceptible with probability $\theta^{k-1}$ (we disallow transmission from $u$ so $k-1$ nodes can infect $v$).  A weighted average gives $\phi_S = \sum_kP_n(k)\theta^{k-1}=\sum_k kP(k)\theta^{k-1}/\ave{K} = \psi'(\theta)/\psi'(1)$.  Thus $\phi_I = \theta-\phi_S-\phi_R = \theta -\psi'(\theta)/\psi'(1) - \gamma(1-\theta)/\beta$ and $\dot{\theta}=-\beta\phi_I$ becomes
+\[
+\dot{\theta} = -\beta\theta + \beta \frac{\psi'(\theta)}{\psi'(1)} + \gamma(1-\theta)
+\]
+yielding 
+\begin{align}
+\dot{\theta} &=  -\beta\theta + \beta \frac{\psi'(\theta)}{\psi'(1)} + \gamma (1-\theta)  \, , \\
+\dot{R} &= \gamma I  \, , \qquad\qquad  S = \psi(\theta)  \, , \qquad\qquad  I = 1 -S -R \, . 
+\end{align}
+This captures substantially more population structure than the MA model with only marginally more complexity. 
+%  We could alternately find this system by calculating the $\phi_S$ to $\phi_I$ flux to give an integrable equation for $\dot{\phi}_I$.  
+This is the system of~\cite{miller:volz} and is equivalent to that of~\cite{volz:cts_time}.  It improves on approaches of~\cite{ball:network_eqns,lindquist} which require either $\order(M)$ or $\order(M^2)$ ODEs where $M$ is the (possibly unbounded) maximum degree.  This derivation is simpler than~\cite{volz:cts_time} because we choose variables with a conservation property, simplifying the bookkeeping.
+
+The edge-based compartmental modeling approach we have introduced forms the basis of our paper.  Depending on the network structure, some details will change.  However, we will remain as consistent as possible.
+%We begin by considering the actual degree models for which each node is assigned some number of stubs which controls its degree, and then we consider the expected degree models for which each node is assigned an expected degree and edges are assigned independently between nodes with probability proportional to their expected degrees.
+

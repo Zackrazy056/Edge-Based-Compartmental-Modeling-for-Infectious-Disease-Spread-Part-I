@@ -1,0 +1,330 @@
+\providecommand{\noopsort}[1]{}
+\begin{thebibliography}{10}
+
+\bibitem{andersonmay}
+Roy~M. Anderson and Robert~M. May.
+\newblock {\em Infectious Diseases of Humans}.
+\newblock Oxford University Press, Oxford, 1991.
+
+\bibitem{andersson:social}
+H{\aa}kan Andersson.
+\newblock Epidemics in a population with social structures.
+\newblock {\em Mathematical Biosciences}, 140(2):79--84, 1997.
+
+\bibitem{andersson:limit}
+H{\aa}kan Andersson.
+\newblock Limit theorems for a random graph epidemic model.
+\newblock {\em Annals of Applied Probability}, 8:1331--1349, 1998.
+
+\bibitem{andersson:network}
+H{\aa}kan Andersson.
+\newblock Epidemic models and social networks.
+\newblock {\em Math. Scientist}, 24:128--147, 1999.
+
+\bibitem{ball:network_eqns}
+F.~Ball and P.~Neal.
+\newblock Network epidemic models with two levels of mixing.
+\newblock {\em Mathematical Biosciences}, 212(1):69--87, 2008.
+
+\bibitem{britton:generate}
+T.~Britton, M.~Deijfen, and A.~Martin-L{\"o}f.
+\newblock {Generating simple random graphs with prescribed degree
+  distribution}.
+\newblock {\em Journal of Statistical Physics}, 124(6):1377--1397, 2006.
+
+\bibitem{chatterjee:SIS}
+S.~Chatterjee and R.~Durrett.
+\newblock Contact processes on random graphs with power law degree
+  distributions have critical value 0.
+\newblock {\em The Annals of Probability}, 37(6):2332--2356, 2009.
+
+\bibitem{christakis}
+N.A. Christakis and J.H. Fowler.
+\newblock {Social Network Sensors for Early Detection of Contagious Outbreaks}.
+\newblock {\em PLoS ONE}, 5(9):e12948, 2010.
+
+\bibitem{chung:connected}
+F.~Chung and L.~Lu.
+\newblock {Connected components in random graphs with given expected degree
+  sequences}.
+\newblock {\em Annals of Combinatorics}, 6(2):125--145, 2002.
+
+\bibitem{diekmann:network}
+O.~Diekmann, M.~C.~M. De~Jong, and J.~A.~J. Metz.
+\newblock {A deterministic epidemic model taking account of repeated contacts
+  between the same individuals}.
+\newblock {\em Journal of Applied Probability}, 35(2):448--462, 1998.
+
+\bibitem{diekmann:R0}
+O.~Diekmann, J.~A.~P. Heesterbeek, and J.~A.~J. Metz.
+\newblock On the definition and the computation of the basic reproduction ratio
+  {$\mathcal{R}_0$} in models for infectious diseases in heterogeneous
+  populations.
+\newblock {\em Journal of Mathematical Biology}, 28:365--382, 1990.
+
+\bibitem{diekmann:textbook}
+O.~Diekmann and JAP Heesterbeek.
+\newblock {\em Mathematical epidemiology of infectious diseases}.
+\newblock Wiley Chichester, 2000.
+
+\bibitem{dijkstra:algorithm}
+E.W. Dijkstra.
+\newblock A note on two problems in connexion with graphs.
+\newblock {\em Numerische mathematik}, 1(1):269--271, 1959.
+
+\bibitem{eames:pair}
+K.T.D. Eames and M.J. Keeling.
+\newblock {Modeling dynamic and network heterogeneities in the spread of
+  sexually transmitted diseases}.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  99(20):13330--13335, 2002.
+
+\bibitem{eubank:episims}
+Stephen Eubank, Hasan Guclu, V~S~Anil Kumar, Madhav~V Marathe, Aravind
+  Srinivasan, Zolt\'{a}n Toroczkai, and Nan Wang.
+\newblock Modelling disease outbreaks in realistic urban social networks.
+\newblock {\em Nature}, 429(6988):180--184, 2004.
+
+\bibitem{feld:friends}
+Scott~L. Feld.
+\newblock Why your friends have more friends than you do.
+\newblock {\em American Journal of Sociology}, 96(6):1464--1477, 1991.
+
+\bibitem{germann:epicast}
+Timothy~C. Germann, Kai Kadau, Ira~M. {Longini Jr}., and Catherine~A. Macken.
+\newblock Mitigation strategies for pandemic influenza in the {U}nited
+  {S}tates.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  103(15):5935--5940, 2006.
+
+\bibitem{gillespie:algorithm}
+D.T. Gillespie.
+\newblock Exact stochastic simulation of coupled chemical reactions.
+\newblock {\em The journal of physical chemistry}, 81(25):2340--2361, 1977.
+
+\bibitem{vanderhofstad:randomgraphs}
+Remco {\noopsort{Hofstad}}van~der Hofstad.
+\newblock {\em Random Graphs and Complex Networks}.
+\newblock 2010.
+
+\bibitem{house:insights}
+T.~House and M.J. Keeling.
+\newblock {Insights from unifying modern approximations to infections on
+  networks}.
+\newblock {\em Journal of The Royal Society Interface}, 2010.
+
+\bibitem{karrer:random_clustered}
+Brian Karrer and M.~E.~J. Newman.
+\newblock Random graphs containing arbitrary distributions of subgraphs.
+\newblock {\em Physical Review E}, 82(6):066118, Dec 2010.
+
+\bibitem{kenah:EPN}
+Eben Kenah and Joel~C. Miller.
+\newblock Epidemic percolation networks, epidemic outcomes, and interventions.
+\newblock {\em Interdisciplinary Perspectives on Infectious Diseases}, 2011,
+  2011.
+
+\bibitem{kenah:second}
+Eben Kenah and James~M. Robins.
+\newblock Second look at the spread of epidemics on networks.
+\newblock {\em Physical Review E}, 76(3):036113, 2007.
+
+\bibitem{kermack}
+W.~O. Kermack and A.~G. McKendrick.
+\newblock A contribution to the mathematical theory of epidemics.
+\newblock {\em Royal Society of London Proceedings Series A}, 115:700--721,
+  August 1927.
+
+\bibitem{kiss:sheep}
+I.Z. Kiss, D.M. Green, and R.R. Kao.
+\newblock {The network of sheep movements within Great Britain: network
+  properties and their implications for infectious disease spread}.
+\newblock {\em Journal of the Royal Society Interface}, 3(10):669, 2006.
+
+\bibitem{liljeros}
+Fredrik Liljeros, Christofer~R. Edling, Lu\'{\i}s A.~Nunes Amaral, H.~Eugene
+  Stanley, and Yvonne {\AA}berg.
+\newblock The web of human sexual contacts.
+\newblock {\em Nature}, 411(6840):907--908, 2001.
+
+\bibitem{lindquist}
+J.~Lindquist, J.~Ma, P.~van~den Driessche, and F.H. Willeboordse.
+\newblock {Effective degree network disease models}.
+\newblock {\em Journal of Mathematical Biology}, pages 1--22, 2010.
+
+\bibitem{lloyd:computer_people}
+A.L. Lloyd and R.M. May.
+\newblock {How viruses spread among computers and people}.
+\newblock {\em Science}, 292(5520):1316--7, 2001.
+
+\bibitem{may:hivdynamics}
+Robert~M. May and R.~M. Anderson.
+\newblock The transmission dynamics of human immunodeficiency virus ({HIV}).
+\newblock {\em Phil. Trans. R. Soc. Lond. B}, 321:565--607, 1988.
+
+\bibitem{may:dynamics}
+Robert~M. May and Alun~L. Lloyd.
+\newblock Infection dynamics on scale-free networks.
+\newblock {\em Physical Review E}, 64(6):066112, Nov 2001.
+
+\bibitem{meyers:sars}
+Lauren~Ancel Meyers, Babak Pourbohloul, Mark E.~J. Newman, Danuta~M.
+  Skowronski, and Robert~C. Brunham.
+\newblock Network theory and {SARS}: predicting outbreak diversity.
+\newblock {\em Journal of Theoretical Biology}, 232(1):71--81, January 2005.
+
+\bibitem{miller:heterogeneity}
+Joel~C. Miller.
+\newblock Epidemic size and probability in populations with heterogeneous
+  infectivity and susceptibility.
+\newblock {\em Physical Review E}, 76(1):010101(R), 2007.
+
+\bibitem{miller:random_clustered}
+Joel~C. Miller.
+\newblock {Percolation and epidemics in random clustered networks}.
+\newblock {\em Physical Review E}, 80(2):020901(R), 2009.
+
+\bibitem{miller:RSIcluster}
+Joel~C. Miller.
+\newblock Spread of infectious disease through clustered populations.
+\newblock {\em Journal of The Royal Society Interface}, 6(41):1121, 2009.
+
+\bibitem{miller:volz}
+Joel~C. Miller.
+\newblock {A note on a paper by Erik Volz: SIR dynamics in random networks}.
+\newblock {\em Journal of Mathematical Biology}, pages 1--10, 2011.
+
+\bibitem{miller:chunglu}
+Joel~C. Miller and Aric Hagberg.
+\newblock Efficient generation of networks with given expected degrees.
+\newblock {\em Accepted to Proceedings of the 8th Workshop on Algorithms and
+  Models for the Web Graph}, 2011.
+
+\bibitem{miller:ebcm_structure}
+Joel~C. Miller and Erik~M. Volz.
+\newblock Edge-based compartmental modeling for epidemic spread {Part III}:
+  Disease and population structure.
+\newblock {\em submitted}, 2011.
+
+\bibitem{miller:ebcm_hierarchy}
+Joel~C. Miller and Erik~M. Volz.
+\newblock Edge-based compartmental modeling for infectious disease spread {Part
+  II}: Model hierarchies.
+\newblock {\em submitted}, 2011.
+
+\bibitem{MolloyReed}
+M.~Molloy and Bruce Reed.
+\newblock A critical point for random graphs with a given degree sequence.
+\newblock {\em Random Structures \& Algorithms}, 6(2):161--179, 1995.
+
+\bibitem{moreno}
+Y.~Moreno, R.~Pastor-Satorras, and A.~Vespignani.
+\newblock {Epidemic outbreaks in complex heterogeneous networks}.
+\newblock {\em The European Physical Journal B-Condensed Matter and Complex
+  Systems}, 26(4):521--529, 2002.
+
+\bibitem{mossong:PLOScontacts}
+Jo\"{e}l Mossong, Niel Hens, Mark Jit, Philippe Beutels, Kari Auranen, Rafael
+  Mikolajczyk, Marco Massari, Stefania Salmaso, Gianpaolo~Scalia Tomba, Jacco
+  Wallinga, Janneke Heijne, Malgorzata Sadkowska-Todys, Magdalena Rosinska, and
+  W.~John Edmunds.
+\newblock Social contacts and mixing patterns relevant to the spread of
+  infectious diseases.
+\newblock {\em PLoS Medicine}, 5(3):381--391, 2008.
+
+\bibitem{newman:spread}
+Mark E.~J. Newman.
+\newblock Spread of epidemic disease on networks.
+\newblock {\em Physical Review E}, 66(1):016128, 2002.
+
+\bibitem{newman:clustering}
+Mark E.~J. Newman.
+\newblock Properties of highly clustered networks.
+\newblock {\em Physical Review E}, 68(2):026121, 2003.
+
+\bibitem{newman:cluster_alg}
+Mark E.~J. Newman.
+\newblock {Random graphs with clustering}.
+\newblock {\em Physical Review Letters}, 103(5):58701, 2009.
+
+\bibitem{newman:arb_degree}
+Mark E.~J. Newman, S.~H. Strogatz, and Duncan~J. Watts.
+\newblock {Random graphs with arbitrary degree distributions and their
+  applications}.
+\newblock {\em Physical Review E}, 64(2):026118, 2001.
+
+\bibitem{babak:finite}
+Pierre-Andr\'{e} No\"{e}l, Bahman Davoudi, Robert~C. Brunham, Luis~J. Dub\'{e},
+  and Babak Pourbohloul.
+\newblock Time evolution of disease spread on finite and infinite networks.
+\newblock {\em Physical Review E}, 79:026101, 2009.
+
+\bibitem{norros:poissonian}
+I.~Norros and H.~Reittu.
+\newblock {On a conditionally Poissonian graph process}.
+\newblock {\em Advances in Applied Probability}, 38(1):59--75, 2006.
+
+\bibitem{pastor-satorras:scale-free}
+Romualdo Pastor-Satorras and Alessandro Vespignani.
+\newblock Epidemic spreading in scale-free networks.
+\newblock {\em Physical Review Letters}, 86(14):3200--3203, Apr 2001.
+
+\bibitem{rohani:pertussis_network}
+P.~Rohani, X.~Zhong, and A.A. King.
+\newblock {Contact Network Structure Explains the Changing Epidemiology of
+  Pertussis}.
+\newblock {\em Science}, 330(6006):982, 2010.
+
+\bibitem{salathe:network}
+Marcel Salath\'{e}, Maria Kazandjiev, Jung~Woo Lee, Philip Levis, Marcus~W.
+  Feldman, and James~H. Jones.
+\newblock A high-resolution human contact network for infectious disease
+  transmission.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  107(51):22020--22025, 2010.
+
+\bibitem{trapman:analytical}
+Pieter Trapman.
+\newblock On analytical approaches to epidemics on networks.
+\newblock {\em Theoretical Population Biology}, 71(2):160--173, 2007.
+
+\bibitem{volz:threshold}
+E.~Volz and L.A. Meyers.
+\newblock {Epidemic thresholds in dynamic contact networks}.
+\newblock {\em Journal of The Royal Society Interface}, 6(32):233, 2009.
+
+\bibitem{volz:cts_time}
+Erik~M. Volz.
+\newblock {SIR} dynamics in random networks with heterogeneous connectivity.
+\newblock {\em Journal of Mathematical Biology}, 56:293--310, 2008.
+
+\bibitem{volz:dynamic_network}
+Erik~M. Volz and Lauren~Ancel Meyers.
+\newblock Susceptible--infected--recovered epidemics in dynamic contact
+  networks.
+\newblock {\em Proceedings of the Royal Society B: Biological Sciences},
+  274(1628):2925--2933, 2007.
+
+\bibitem{volz:clustered_result}
+Erik~M. Volz, Joel~C. Miller, Alison Galvani, and Lauren~Ancel Meyers.
+\newblock The effects of heterogeneous and clustered contact patterns on
+  infectious disease dynamics.
+\newblock {\em Accepted to PLoS Computational Biology}, 2011.
+
+\bibitem{wallinga:contact_survey}
+Jacco Wallinga, Peter Teunis, and Mirjam Kretzschmar.
+\newblock {Using data on social contacts to estimate age-specific transmission
+  parameters for respiratory-spread infectious agents}.
+\newblock {\em American Journal of Epidemiology}, 164(10):936, 2006.
+
+\bibitem{watts:collective}
+D.~J. Watts and S.~H. Strogatz.
+\newblock Collective dynamics of `small-world' networks.
+\newblock {\em Nature}, 393(6684):409--410, 1998.
+
+\bibitem{gf}
+Herbert~S. Wilf.
+\newblock {\em generatingfunctionology}.
+\newblock A K Peters, Ltd, 3rd edition, 2005.
+
+\end{thebibliography}

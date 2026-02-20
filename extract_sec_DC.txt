@@ -1,0 +1,175 @@
+\label{sec:DC}
+We finally generalize the DFD model, allowing stubs to enter a dormant phase after edges break.  This Dormant Contact (DC) model is appropriate for serial monogamy where individuals do not immediately find a new partner.  It is the most general model we present: it reduces to any model of this paper in appropriate limits~\cite{miller:ebcm_hierarchy}.
+
+A node is assigned $k_m$ stubs using the probability mass function $P(k_m)$.  We take $\psi(x) = \sum_{k_m} P(k_m)x^{k_m}$.  A stub is dormant or active depending on whether it is currently connected to a neighbor.  The maximum degree of a node is $k_m$ and the ``active'' and ``dormant'' degrees are $k_a$ and $k_d$ respectively, $k_a+k_d=k_m$.  In addition to $\phi_S$, $\phi_I$, and $\phi_R$ we add $\phi_D$ denoting the probability a stub is dormant and has never transmitted infection from a neighbor, so $\theta=\phi_S+\phi_I+\phi_R+\phi_D$.  Active stubs become dormant at rate $\eta_2$ and dormant stubs become active at rate $\eta_1$.
+
+We now develop flow diagrams (figure~\ref{fig:dormant}).  The diagram for $S$, $I$, and $R$ is as before.  The diagram for $\theta$ and the $\phi$ variables is similar to the DFD model, but with the new compartment $\phi_D$.  The fluxes associated with edge breaking are at rate $\eta_2$ times $\phi_S$, $\phi_I$, or $\phi_R$ and go from the appropriate compartment into $\phi_D$, for a total of $\eta_2(\theta-\phi_D)$.  
+To describe fluxes due to edge creation, we generalize the definitions of $\pi_S$, $\pi_I$, and $\pi_R$ to give the probability a stub is dormant (and thus available to form a new contact) and belongs to a susceptible, infected, or recovered node, with $\pi = \pi_S+\pi_I+\pi_R$ the probability a stub is dormant.  The probability a new neighbor is susceptible, infected, or recovered is $\pi_S/\pi$, $\pi_I/\pi$, and $\pi_R/\pi$ respectively.  The fluxes associated with edge creation occur at total rate $\eta_1\phi_D$, with proportions $\pi_S/\pi$, $\pi_I/\pi$, and $\pi_R/\pi$ into $\phi_S$, $\phi_I$, and $\phi_R$ respectively.
+
+The flow diagram for the $\pi$ variables is related to that for the DFD model, but we must account for active and dormant stubs.  We use $\xi_S$, $\xi_I$, and $\xi_R$ to be the probabilities a stub is active and belongs to each type of node, with $1-\pi=\xi = \xi_S + \xi_I + \xi_R$ the probability a stub is active.  The $\pi_S$ to $\xi_S$ and $\xi_S$ to $\pi_S$ fluxes are $\eta_1\pi_S$ and $\eta_2\xi_S$ respectively.  Similar results hold for the other compartments.  We can use this to show $\dot{\xi}=-\eta_2\xi+\eta_1\pi=-\eta_2\xi+\eta_1(1-\xi)$ from which we can conclude that (at equilibrium) $\pi = \eta_2/(\eta_1+\eta_2)$ and $\xi = \eta_1/(\eta_1+\eta_2)$.  The fluxes from $\xi_I$ and $\pi_I$ to $\xi_R$ and $\pi_R$ respectively represent recovery of the node the stub belongs to and so are $\gamma\xi_I$ and $\gamma \pi_I$ respectively. 
+
+We can calculate $\xi_S$ and $\pi_S$ explicitly. The probability a dormant stub belongs to a susceptible node is $\pi_S=\phi_D\psi'(\theta)/\psi'(1)$ where $\phi_D$ is the probability the dormant stub has never received infection, and $\psi'(\theta)/\psi'(1)$ is the probability that none of the other stubs have received infection.  Similarly, the probability an active stub belongs to a susceptible node is $\xi_S= (\theta-\phi_D)\psi'(\theta)/\psi'(1)$.     We can use $\pi_I = \pi - \pi_S-\pi_R$ and $\xi_I = \xi - \xi_S-\xi_R$ to simplify the system further.
+
+
+\begin{figure}
+\begin{center}
+\scalebox{0.75}{\begin{picture}(0,0)%
+\includegraphics{dormant.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(5850,3511)(1651,-5494)
+\put(4562,-5285){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1-\theta$}%
+}}}}
+\put(3006,-3980){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_S$}%
+}}}}
+\put(4576,-3980){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_I$}%
+}}}}
+\put(6111,-3980){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_R$}%
+}}}}
+
+\put(3750,-4380){\makebox(0,0)[t]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\beta\phi_I\phi_S\frac{\psi''(\theta)}{\psi'(\theta)}$}%
+}}}}
+\put(5311,-4080){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma\phi_I$}%
+}}}}
+\put(4811,-4580){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\beta\phi_I$}%
+}}}}
+
+\put(2155,-3287){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_1 \frac{\pi_S}{\pi} \phi_D$}%
+}}}}
+\put(3093,-2924){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_1\frac{\pi_I}{\pi} \phi_D$}%
+}}}}
+\put(4226,-2804){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_1\frac{\pi_R}{\pi}\phi_D$}%
+}}}}
+\put(4527,-2334){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_D$}%
+}}}}
+\put(5694,-2892){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_2\phi_S$}%
+}}}}
+\put(3857,-2082){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_1\phi_D$}%
+}}}}
+\put(5425,-2082){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_2(\theta-\phi_D)$}%
+}}}}
+\put(7383,-3682){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_2\phi_R$}%
+}}}}
+\put(6480,-3288){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_2\phi_I$}%
+}}}}
+\end{picture}%
+} \hfill \scalebox{0.75}{\begin{picture}(0,0)%
+\includegraphics{vertical_flux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(817,3083)(2551,-5019)
+\put(2946,-2248){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$S=\psi(\theta)$}%
+}}}}
+\put(2946,-3520){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$I$}%
+}}}}
+\put(2946,-4781){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$R$}%
+}}}}
+%\put(3107,-3009){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}}%
+%}}}}
+\put(3137,-4070){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma I$}%
+}}}}
+\end{picture}%
+}\hfill
+\scalebox{0.75}{\begin{picture}(0,0)%
+\includegraphics{vertical_dormant.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(2350,3344)(1426,-4809)
+\put(1485,-2072){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\parbox{0.02\textwidth}{~~$\xi_S=\frac{(\theta-\phi_D)\psi'(\theta)}{\psi'(1)}$}}%
+}}}}
+\put(1821,-3273){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\xi_I$}%
+}}}}
+\put(1821,-4540){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\xi_R$}%
+}}}}
+\put(3366,-4540){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\pi_R$}%
+}}}}
+\put(3360,-3273){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\pi_I$}%
+}}}}
+\put(3165,-2072){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\parbox{0.02\textwidth}{~~$\pi_S=\frac{\phi_D\psi'(\theta)}{\psi'(1)}$}}%
+}}}}
+%\put(1994,-2640){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}G}%
+%}}}}
+%\put(3539,-2640){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}H}%
+%}}}}
+\put(1994,-3896){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma\xi_I$}%
+}}}}
+\put(3544,-3896){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma\pi_I$}%
+}}}}
+\put(2533,-4237){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_2\xi_R$}%
+}}}}
+\put(2533,-2954){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_2\xi_I$}%
+}}}}
+\put(2533,-1685){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_2\xi_S$}%
+}}}}
+\put(2533,-2303){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_1\pi_S$}%
+}}}}
+\put(2533,-3597){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_1\pi_I$}%
+}}}}
+\put(2533,-4864){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{12}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\eta_1\pi_R$}%
+}}}}
+\end{picture}%
+} 
+\end{center}
+\caption{\footnotesize\textbf{Dormant Contact model.}  A flow diagram accounting for the dormant stage.  (Left) Movement of stubs between different stages, including dormant.  Stubs are classified by whether they have received infection and the status (or existence) of the current neighbor. (Middle) The flow of individuals between different states.  (Right)  Movement of stubs between states with stubs classified based on the status of the node they belong to.}
+\label{fig:dormant}
+\end{figure}
+ 
+Our new equations are
+\begin{align}
+\dot{\theta} &= -\beta \phi_I\, , \\%\label{eqn:dormant_theta_dot}\\
+\dot{\phi}_S &= - \beta \phi_I \phi_S \frac{\psi''(\theta)}{\psi'(\theta)} + \eta_1 \frac{\pi_S}{\pi}\phi_D - \eta_2\phi_S\, , \\
+\dot{\phi}_I &= \beta \phi_I\phi_S\frac{\psi''(\theta)}{\psi'(\theta)} + \eta_1 \frac{\pi_I}{\pi} \phi_D - (\eta_2+\beta+\gamma)\phi_I \, , \\
+\dot{\phi}_D &= \eta_2(\theta-\phi_D) - \eta_1 \phi_D\, , \\
+\dot{\xi}_R &= -\eta_2 \xi_R + \eta_1 \pi_R +\gamma \xi_I \, , \qquad \xi_S = (\theta-\phi_D)\frac{\psi'(\theta)}{\psi'(1)} \, , \qquad \xi_I = \xi- \xi_S - \xi_R\, , \\
+\dot{\pi}_R &= \eta_2 \xi_R-\eta_1\pi_R + \gamma \pi_I\, , \qquad \pi_S = \phi_D \frac{\psi'(\theta)}{\psi'(1)}  \, , \qquad \pi_I = \pi - \pi_S - \pi_R\, , \\
+\xi &= \frac{\eta_1}{\eta_1+\eta_2} \, , \qquad \pi = \frac{\eta_2}{\eta_1+\eta_2}\, , \\
+\dot{R} &= \gamma I \, , \qquad\qquad S = \psi(\theta) \, , \qquad\qquad I = 1-S-R \, .
+ %\label{eqn:dormant_R_dot}
+\end{align}
+
+
+\subsubsection{$\Ro$ and final size}
+We can show that 
+\begin{equation}
+\Ro = 
+\frac{\beta}{\beta+\eta_2+\gamma}\left(\frac{\ave{K_m^2-K_m}}{\ave{K_m}} \frac{\eta_1}{\eta_1+\eta_2}\frac{\eta_2+\gamma}{\gamma} + \frac{\eta_1\eta_2}{\gamma(\gamma+\eta_1+\eta_2)}\right)
+\end{equation}
+However, we have not found a simple final size relation.  Details are in the Appendix.
+\subsubsection{Example}
+\label{sec:DCex}
+\begin{figure}
+\parbox{0.48\textwidth}{\includegraphics[width=0.48\textwidth]{DC_cum.pdf}}\hfill
+\parbox{0.48\textwidth}{\includegraphics[width=0.48\textwidth]{DC_inf.pdf}}
+\caption{\footnotesize\textbf{Dormant Contact example (section~\ref{sec:DCex}).} The average of 155 simulated epidemics in a population of 5000 nodes (solid) with a Poisson maximum degree distribution of mean 3 compared with theory (dashed).  Simulations are shifted in time so that $t=0$ corresponds to $3\%$ cumulative incidence and then averaged.     Because stochastic effects are not negligible, the individual peaks are not perfectly aligned, so the averaging has a small, but noticeable, effect to reduce and broaden the simulated peak.  In larger populations this disappears.} 
+\label{fig:deex}
+\end{figure}
+
+In figure~\ref{fig:deex}, we consider the spread of a disease through a network with dormant edges.  The distribution of $k_m$ is Poisson with mean $3$
+\[
+\psi(x) = e^{-3(1-x)}
+\]
+  The parameters are $\beta = 2$, \ $\gamma = 1$, \ $\eta_1 = \gamma$, and $\eta_2 = \gamma/2$.  Simulations are again slow, so we use a smaller population with 322 simulations, and average the 155 that became epidemics.
+%  Unfortunately, this results in more significant noise.  To help reduce the noise, we shifted the epidemics in time so that $t=0$ corresponds to $1\%$ cumulative incidence and then averaged the epidemics together.  
+
+

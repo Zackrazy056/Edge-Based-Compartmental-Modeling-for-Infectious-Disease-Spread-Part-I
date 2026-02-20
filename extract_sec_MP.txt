@@ -1,0 +1,111 @@
+\label{sec:MP}
+We now consider the Mixed Poisson (MP) model.  In this model, each node is assigned an expected degree $\kappa$ using the probability density function $\rho(\kappa)$.  A $u$-$v$ edge exists with probability $\kappa_u\kappa_v/(N-1)\ave{K}$ independently of other edges.  We use the name ``Mixed Poisson'' because at karge $N$ the actual degree of nodes with expected degree $\kappa$ is chosen from a Poisson distribution with mean $\kappa$.  The degree distribution is a mixture of Poisson distributions.
+
+Consider two nodes $u$ and $v$ whose expected degrees are $\kappa_u$ and $\kappa_v=\kappa_u + \Delta \kappa$ with $\Delta \kappa \ll 1$.  Our question is, how much does the additional $\Delta \kappa$ reduce the probability $v$ is susceptible?  At leading order it contributes an extra edge to $v$ with probability $\Delta \kappa$, and we may assume it contributes at most one additional edge.  We define $\Theta$ to be the probability an edge has not transmitted infection.  With probability $\Theta \Delta \kappa$ there is an additional edge which has not transmitted.  The probability the extra $\Delta \kappa$ either does not contribute an edge or contributes an edge which has not transmitted is $1-\Delta \kappa + \Theta \Delta \kappa = 1-(1-\Theta)\Delta \kappa$.  If $s(\kappa,t)$ is the probability a node of expected degree $\kappa$ is susceptible, then we have $s(\kappa+\Delta\kappa,t) = s(\kappa,t) [1-(1-\Theta)\Delta \kappa]$.  Taking $\Delta \kappa \to 0$, this becomes
+$\partial s/\partial\kappa = -(1-\Theta)s$.  Thus $s(\kappa,t) = \exp[-\kappa(1-\Theta)]$ and $S(t) = \Psi(\Theta(t))$ where
+\[
+\Psi(x) = \int_0^\infty e^{-\kappa(1-x)} \rho(\kappa) \, \mathrm{d}\kappa
+\]
+Note that this is the Laplace transform of $\rho$ evaluated at $1-x$.  As before, figure~\ref{fig:MP} gives
+\[
+\dot{R} = \gamma I \, , \qquad\qquad S=\Psi(\Theta) \, , \qquad\qquad I = 1-S-R
+\]
+and we need $\Theta(t)$.
+
+\begin{figure}
+\parbox{\textwidth}{\parbox{0.5\textwidth}{\scalebox{0.95}{\begin{picture}(0,0)%
+\includegraphics{edgeflux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,1833)(2026,-3544)
+\put(2439,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Phi_S=\frac{\Psi'(\Theta)}{\Psi'(1)}$}%
+}}}}
+\put(3974,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Phi_I$}%
+}}}}
+\put(3974,-3310){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1-\Theta$}%
+}}}}
+\put(5511,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Phi_R$}%
+}}}}
+%\put(3177,-2224){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\beta \Phi_I \frac{\psi''(\Theta)}{\psi'(1)}$}%
+%}}}}
+\put(4732,-2224){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma\Phi_I$}%
+}}}}
+\put(4241,-2774){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\beta\Phi_I$}%
+}}}}
+\end{picture}%
+}}%
+\parbox{0.5\textwidth}{\scalebox{0.95}{\begin{picture}(0,0)%
+\includegraphics{standardflux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,550)(1651,-1886)
+\put(2038,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$S=\Psi(\Theta)$}%
+}}}}
+\put(3589,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$I$}%
+}}}}
+\put(5140,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$R$}%
+}}}}
+\put(4382,-1509){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma I$}%
+}}}}
+\end{picture}%
+}}}
+\caption{\footnotesize\textbf{Mixed Poisson model.} (Left) The flux of edges for a static Mixed Poisson network. (Right) The flux of individuals through the different stages}
+\label{fig:MP}
+\end{figure}
+
+
+We follow the CM approach almost exactly.  The value of $\Theta$ is the probability an edge has not transmitted to the test node $u$.  We define $\Phi_S$, $\Phi_I$, and $\Phi_R$ to be the probabilities an edge has not transmitted to $u$ and connects to either a susceptible, infected, or recovered node, so $\Theta = \Phi_S+\Phi_I+\Phi_R$.  To calculate $\Phi_S$, we observe that a neighbor $v$ of $u$ with expected degree $\kappa$ has the same probability of having an edge to any $w \neq u$ as any other node of expected degree $\kappa$ because edges are created independently of one another.  Thus given $\kappa$, $v$ is susceptible with probability $s(\kappa,t)$.  Taking the weighted average over all $\kappa$ gives
+$\Phi_S = \int_0^\infty \rho_n(\kappa) s(\kappa,t) \, \mathrm{d} t = \int_0^\infty \kappa \exp[-\kappa(1-\Theta)] \rho(\kappa)\, \mathrm{d}\kappa / \ave{K} = \Psi'(\Theta)/\Psi'(1)$.  The same techniques as for the CM networks give $\Phi_R = \gamma (1-\Theta)/\beta$.  Our equations are
+\begin{align*}
+\dot{\Theta} &=  -\beta\Theta + \beta \frac{\Psi'(\Theta)}{\Psi'(1)} + \gamma (1-\Theta)  \, , \\
+\dot{R} &= \gamma I  \, , \qquad\qquad  S = \Psi(\Theta)  \, , \qquad\qquad  I = 1 -S -R \, . 
+\end{align*}
+These equations are almost identical to those of CM epidemics except that $\Psi$ and $\Theta$ replace $\psi$ and $\theta$ .  This is not coincidence.  In fact the MP networks are a special case of CM networks~\cite{miller:ebcm_hierarchy}.
+
+\subsubsection{$\Ro$ and final size} 
+We find
+\[
+\Ro = \frac{\beta}{\beta+\gamma}\frac{\ave{\hat{K}^2}}{\ave{K}} \, ,
+\] 
+where $\ave{\hat{K}^2}$ is the average of $\kappa^2$ (which equals the average of $k^2-k$) and $\ave{K}$ is the average of $\kappa$ (which equals the average of $k$).  The total proportion infected by an epidemic is 
+$R(\infty) = 1-\Psi(\Theta(\infty))$, where
+\[
+\Theta(\infty) = \frac{\gamma}{\beta+\gamma} + \frac{\beta}{\beta+\gamma} \frac{\Psi'(\Theta(\infty))}{\Psi'(1)}  \, .
+\]
+Full details are in the Appendix.
+
+\subsubsection{Example}
+\label{sec:MPex}
+\begin{figure}
+\parbox{\textwidth}{\includegraphics{MP_cum.pdf}
+\includegraphics{MP_inf.pdf}}
+\caption{\footnotesize \textbf{Mixed Poisson Example (section~\ref{sec:MPex}).} Model predictions (dashed) match a simulated epidemic (solid) in a Mixed Poisson network with $5\times 10^5$ nodes.  The solid curve is a single simulation.  Time is chosen so that $t=0$ corresponds to $1$\% cumulative incidence.}
+\label{fig:MPex}
+\end{figure}
+We consider a population whose distribution of expected degrees satisfies
+\[
+\rho(\kappa) = \begin{cases} \frac{1}{4} & 0\leq \kappa \leq 2\\
+ \frac{1}{20} & 10\leq \kappa \leq 20\\
+0 & \text{Otherwise}
+\end{cases}
+\]
+Half the individuals have an expected degree between $0$ and $2$ uniformly, and the other half have expected degree between $10$ and $20$ uniformly.  This gives
+\[
+\Psi(x) =  \frac{1}{4(x-1)}\left( e^{2(x-1)} - 1 + \frac{e^{20(x-1)} - e^{10(x-1)}}{5} \right)
+\]
+We take $\beta = 0.15$ and $\gamma = 1$, and perform simulations with a population of size $5\times10^5$ generated using the algorithm of~\cite{miller:chunglu}.  We compare simulation and prediction in figure~\ref{fig:MPex}.
+

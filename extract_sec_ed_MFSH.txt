@@ -1,0 +1,118 @@
+\label{sec:ed_MFSH}
+For the expected degree formulation of the Mean Field Social Heterogeneity (MFSH) model, the probability an edge exists between $u$ and $v$ at time $t$ is $\kappa_u\kappa_v/(N-1)\ave{K}$.  Whether this edge exists at one moment is independent of whether it exists at any other moment and what other edges exist.
+
+As before, we consider two nodes whose expected degrees differ by $\Delta \kappa$ and ask how much the additional $\Delta \kappa$ reduces the probability of being susceptible.  The definition of $\Theta$ is slightly more problematic here because having an edge at one moment is independent of having one later.  So it does not make sense to discuss the probability an edge did not transmit previously because the edge did not exist previously.  Instead, we note that in the MP case $(1-\Theta)\Delta \kappa$ could be interpreted as the probability that the additional amount of $\Delta \kappa$ ever contributed an edge that had transmitted infection.  Guided by this, we define $\Theta$ so that as $\Delta \kappa \to 0$, the extra amount of $\Delta \kappa$ has at some time contributed an edge that transmitted to the node with pobability $(1-\Theta)\Delta \kappa$.  This again leads to $\Psi(x)= \int_0^\infty e^{-\kappa(1-x)}\rho(\kappa)\, \mathrm{d}\kappa$.  The  flow diagram for individuals (figure~\ref{fig:MFSH_ED}) is unchanged:
+\[
+\dot{R} = \gamma I \, , \qquad\qquad  S = \Psi(\Theta)  \, , \qquad\qquad  I = 1 -S -R
+\]
+
+\begin{figure}
+\parbox{\textwidth}{\parbox{0.4\textwidth}{\scalebox{0.8}{\begin{picture}(0,0)%
+\includegraphics{edgeflux_AD_MFSH_all_flux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+%\begin{picture}(3883,2667)(2026,-2936)
+\begin{picture}(3883,2441)(2026,-3544)
+\put(2609,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Phi_S=\Pi_S$}%
+}}}}
+\put(4124,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Phi_I=\Pi_I$}%
+}}}}
+\put(4094,-3310){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1-\Theta$}%
+}}}}
+\put(5661,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Phi_R=\Pi_R$}%
+}}}}
+\put(4301,-2674){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\beta\Phi_I$}%
+}}}}
+\end{picture}%
+}}\hfill \parbox{0.45\textwidth}{\scalebox{0.9}{\begin{picture}(0,0)%
+\includegraphics{standardflux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,550)(1651,-1886)
+\put(2038,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$S=\Psi(\Theta)$}%
+}}}}
+\put(3589,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$I$}%
+}}}}
+\put(5140,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$R$}%
+}}}}
+\put(4382,-1509){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma I$}%
+}}}}
+\end{picture}%
+}\\[30pt]
+\scalebox{0.9}{\begin{picture}(0,0)%
+\includegraphics{standardflux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,550)(1651,-1886)
+\put(2058,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Pi_S=\frac{\Psi'(\Theta)}{\Psi'(1)}$}%
+}}}}
+\put(3589,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Pi_I$}%
+}}}}
+\put(5140,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Pi_R$}%
+}}}}
+\put(4432,-1509){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma \Pi_I$}%
+}}}}
+\end{picture}%
+}}}\\
+\caption{\footnotesize \textbf{Mean Field Social Heterogeneity model}.  The flow diagram for a Mean Field Social Heterogeneity population (expected degree formulation).  This is similar to the actual degree formulation in figure~\ref{fig:mfsh}.  The new variables $\Pi_S$, $\Pi_I$, and $\Pi_R$ (bottom right) represent the probability that a newly formed edge connects to a susceptible, infected, or recovered node, they can be thought of as the relative rates that each group forms edges.  Since the test node does not cause infections, and the probability a contact is with a node of a given $\kappa$ is equal to the probability a new contact will be with a node of the given $\kappa$, the probability a current neighbor has a given state is equal to the probability a new neighbor has that state.  Thus each $\Phi$ variable equals the corresponding $\Pi$ variable.}
+\label{fig:MFSH_ED}
+\end{figure}
+
+To find the evolution of $\Theta$, we define $\Phi_S$, $\Phi_I$, and $\Phi_R$ to be the probabilities a current edge connects $u$ to a susceptible, infected, or recovered node.  The probability that a small extra amount $\Delta \kappa$ currently contributes an edge and previously had a different edge that transmitted scales like $\Delta \kappa^2(1-\Theta)$.  Since $\Delta \kappa^2 \ll \Delta \kappa$, this is negligible compared to the probability that there is a current edge.  We conclude that at leading order, $\Phi_S\Delta\kappa$, $\Phi_I \Delta \kappa$, and $\Phi_R\Delta\kappa$ give the probability that the $\Delta \kappa$ contributes a current edge connected to a susceptible, infected, or recovered node and there has never been a transmission due to this extra $\Delta \kappa$.
+ 
+We can construct a flow diagram between $\Phi_S\Delta \kappa$, $\Phi_I\Delta\kappa$, $\Phi_R\Delta\kappa$, and $(1-\Theta)\Delta \kappa$.  Because all of these have $\Delta \kappa$ in them, we factor it out to create to just use $\Phi_S$, $\Phi_I$, $\Phi_R$, and $1-\Theta$.  Because edges have no duration, there is no $\Phi_S$ to $\Phi_I$ or $\Phi_I$ to $\Phi_R$ flux (similar to the actual degree MFSH model).  Instead there is flux in and out of these compartments representing the continuing change of edges.  The $\Phi_I$ to $1-\Theta$ flux is $\beta \Phi_I$.
+
+Because edges have no duration, the probability an edge connects to an individual of a given type is the probability a new edge connects to an individual of that type: $\Phi_S=\Pi_S$, $\Phi_I=\Pi_I$, and $\Phi_R=\Pi_I$ where $\Pi_S$, $\Pi_I$ and $\Pi_R$ are the probabilities that a newly formed edge connects to a susceptible, infected, or recovered node.\footnote{Unlike the actual degree formulation we do not need a factor of $\Theta$ in these because the smallness of $\Delta \kappa$ allows us to assume there has never been a previous transmission.}  We have $\Pi_S = \Psi'(\Theta)/\Psi'(1)$ and $\dot{\Pi}_R = \gamma \Pi_I$.  Since $\Pi_I = \Phi_I$, this means $\dot{\Pi}_R = -\gamma \dot{\Theta}/\beta$. Integrating gives $\Pi_R=\gamma(1-\Theta)/\beta$.  So $\Pi_I = 1-\Psi'(\Theta)/\Psi'(1)-\gamma(1-\Theta)/\beta$.  Since $\dot{\Theta} = -\beta \Phi_I=-\beta\Pi_I$, we finally have
+\begin{align*}
+\dot{\Theta} &= -\beta +\beta\frac{\Psi'(\Theta)}{\Psi'(1)} + \gamma(1-\Theta)\\
+\dot{R} &= \gamma I \, , \qquad\qquad S = \Psi(\Theta) \, , \qquad\qquad I = 1-S-R
+\end{align*}
+Under appropriate limits the MFSH equations in $k$ reduce to those in $\kappa$ and vice versa, so the models are equivalent~\cite{miller:ebcm_hierarchy}.  Surprisingly, this system differs from the MP equations only in the first term of the $\dot{\Theta}$ equation.
+
+\subsubsection{$\Ro$ and final size}
+We find 
+\[
+\Ro=\frac{\beta}{\gamma} \frac{\ave{\hat{K}^2}}{\ave{K}}
+\]
+and the final size is $R(\infty) = 1- \Psi(\Theta(\infty))$ where $\Theta(\infty)$ solves
+\[
+\Theta = \frac{\beta}{\gamma}\left(1+\frac{\Psi'(\Theta)}{\Psi'(1)} \right) + 1
+\]
+Full details are in the Appendix.
+
+\subsubsection{Example}
+\label{sec:EDMFSHex}
+For our example we take a population with $\rho(\kappa) = e^\kappa/(e^3-1)$ for $0<\kappa<3$ and $0$ otherwise, giving
+\[
+\Psi(x) = \frac{e^{3x}-1}{x(e^3-1)}
+\]
+We take $\gamma=1$ and $\beta=0.435$ and compare simulation with theory in figure~\ref{fig:mfsh_ed_ex}.  We choose these parameters to demonstrate that the approach remains accurate for small $\Ro=1.04$.  We use a population of $15\times 10^6$.  There is noise since the epidemic does not infect a large number of people.
+
+\begin{figure}
+\parbox{\textwidth}{\includegraphics{mfsh_ed_cum_smallR0.pdf}
+\includegraphics{mfsh_ed_inf_smallR0.pdf}}
+\caption{\footnotesize \textbf{Expected Degree MFSH Example (section~\ref{sec:EDMFSHex}).} Model predictions (dashed) match a simulated epidemic (solid) in a MFSH network with $15\times 10^6$ nodes.  The solid curve is a single simulation.  Time is chosen so that $t=0$ corresponds to $0.5$\% cumulative incidence.}
+\label{fig:mfsh_ed_ex}
+\end{figure}
+

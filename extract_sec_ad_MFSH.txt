@@ -1,0 +1,124 @@
+\label{sec:ad_MFSH}
+%For the Mean Field Social Heterogeneity (MFSH) model, the number of stubs $k$ an individual has is assigned using the probability mass function $P(k)$.  Consider a stub belonging to $u$.  When calculating the probability it connects to a stub of an infected node, we ignore the history of the stub and simply look at the proportion of stubs that belong to infected nodes.  We can think of this as simply stating that at every moment the stub is connected to a new randomly chosen stub.  As a consequence, the probability that a neighbor of $u$ has a given status is independent of the status of $u$.  This differs from the CM model because with permanent contacts having a current edge to an infected neighbor is positively correlated with being infected.
+
+We analyze the Mean Field Social Heterogeniety (MFSH) model similarly.  We take $\theta$ as the probability a stub has never transmitted infection to the test node $u$ from any neighbor.  To define $\phi_S$, $\phi_I$, and $\phi_R$ we require that the stub has not transmitted infection to $u$ and additionally the current neighbor is susceptible, infected, or recovered.  Since at each moment an individual chooses a new neighbor, the probability of connecting to a node of a given status is the proportion of all stubs belonging to nodes of that status.  We must track the proportion of stubs that belong to susceptible, infected, or recovered nodes $\pi_S$, $\pi_I$, and $\pi_R$.  
+%Because edges change quickly, the probability a stub has not transmitted to $u$ is independent of the current neighbor.  Consequently, 
+Because of the rapid turnover of neighbors, we find that $\phi_S$ is the product of the probability that a stub has not transmitted $\theta$ with the probability it has just joined with a susceptible neighbor $\pi_S$ so $\phi_S = \theta\pi_S$.  Similarly $\phi_I = \theta \pi_I$ and $\phi_R = \theta \pi_R$.  
+
+We create flow diagrams as before.  The $S$, $I$, and $R$ diagram is unchanged, but the diagram for the $\phi$ variables and $1-\theta$ changes.  There are no $\phi_S$ to $\phi_I$ or $\phi_I$ to $\phi_R$ fluxes because of the explicit assumption that the neighbors at any two times are independent.  The change in neighbor status is due to change of neighbor.  The flux into $1-\theta$ from $\phi_I$ is $\beta \phi_I$ as before.  We need a new flow diagram for $\pi_s$, $\pi_I$, and $\pi_R$ similar to that for $S$, $I$, and $R$.  Stubs belonging to infected nodes become stubs belonging to recovered nodes at rate $\gamma$, thus $\dot{\pi}_R = \gamma \pi_I$.   We calculate $\pi_S$ explicitly: the probability a stub belongs to a node of degree $k$ is $kP(k)/\ave{K}$, and the probability the node is susceptible is $\theta^k$.  Taking the weighted average of this we find $\pi_S = \theta \psi'(\theta)/\psi'(1)$.  Finally, $\pi_I = 1-\pi_S-\pi_R$.  
+
+\begin{figure}
+\parbox{\textwidth}{\parbox{0.4\textwidth}{\scalebox{0.8}{\begin{picture}(0,0)%
+\includegraphics{edgeflux_AD_MFSH_all_flux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,2441)(2026,-3544)
+%\begin{picture}(3883,1833)(2026,-3544)
+\put(2609,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_S=\theta\pi_S$}%
+}}}}
+\put(4174,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_I=\theta\pi_I$}%
+}}}}
+\put(4074,-3310){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1-\theta$}%
+}}}}
+\put(5681,-2047){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\phi_R=\theta\pi_R$}%
+}}}}
+\put(4381,-2674){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{10}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\beta\phi_I$}%
+}}}}
+\end{picture}%
+}}\hfill \parbox{0.45\textwidth}{\scalebox{0.9}{\begin{picture}(0,0)%
+\includegraphics{standardflux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,550)(1651,-1886)
+\put(2038,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$S=\psi(\theta)$}%
+}}}}
+\put(3589,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$I$}%
+}}}}
+\put(5140,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$R$}%
+}}}}
+\put(4382,-1509){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma I$}%
+}}}}
+\end{picture}%
+}\\[20pt]
+\scalebox{0.9}{\begin{picture}(0,0)%
+\includegraphics{standardflux.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3883,550)(1651,-1886)
+\put(2058,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\pi_S=\frac{\theta\psi'(\theta)}{\psi'(1)}$}%
+}}}}
+\put(3589,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\pi_I$}%
+}}}}
+\put(5140,-1700){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\pi_R$}%
+}}}}
+\put(4432,-1509){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\gamma \pi_I$}%
+}}}}
+\end{picture}%
+}}}\\
+\caption{\footnotesize \textbf{Mean Field Social Heterogeneity model}.  The flow diagram for the MFSH model (actual degree formulation).  Because contacts are durationless, neighbors do not change status while joined to an individual, so there is no flux between the $\phi$ variables (left).  The new variables $\pi_S$, $\pi_I$, and $\pi_R$ (bottom right) represent the probability that a randomly selected stub belongs to a susceptible, infected, or recovered node.  We can find $\pi_S$ in terms of $\theta$ and then solve for $\pi_I$ and $\pi_R$ in much the same way we solve for $I$ and $R$ in the CM model.  We then find each $\phi$ variable is $\theta$ times the corresponding $\pi$ variable.}
+\label{fig:mfsh}
+\end{figure}
+
+Combining these observations $\dot{\pi}_R = \gamma \pi_I = \gamma \phi_I/\theta = -(\gamma/\beta) \dot{\theta}/\theta$.  So $\pi_R = -(\gamma/\beta)\ln \theta$ (the constant of integration is $0$).  We have $\pi_I =1-\pi_S-\pi_R= 1-\theta\psi'(\theta)/\psi'(1) + (\gamma/\beta)\ln \theta$ and $\dot{\theta} = -\beta \theta \pi_I$.  Thus 
+\begin{align}
+\dot{\theta} &= -\beta \theta + \beta \frac{\theta^2\psi'(\theta)}{\psi'(1)} - \theta\gamma \ln \theta\\
+\dot{R} &= \gamma I  \, , \qquad\qquad  S = \psi(\theta)  \, , \qquad\qquad  I = 1-S-R
+\end{align}
+
+The MFSH model has been considered previously~\cite{andersonmay,may:hivdynamics, may:dynamics,moreno,pastor-satorras:scale-free}, with the population stratified by degree.  Setting $\zeta$ to be the proportion of all stubs which belong to infected nodes (equivalent to $\pi_I$ above), the pre-existing system is
+\begin{align*}
+ \dot{S}_k &= -\beta kS_k \zeta\\
+ \dot{I}_k &= \beta kS_k \zeta - \gamma I_k\\
+ \zeta &= \frac{\sum_k kP(k) I_k}{\ave{K}}
+ \end{align*}
+where $S_k$ and $I_k$ are the probabilities a random individual with $k$ contacts is susceptible or recovered.  A known change of variables reduces this to a few equations equivalent to ours (see Appendix).
+
+
+\subsubsection{$\Ro$ and final size}
+We find 
+\begin{equation}
+\Ro = \frac{\beta}{\gamma}\frac{\ave{K^2}}{\ave{K}}
+\end{equation}
+consistent with previous observations~\cite{andersonmay}.  The total proportion infected is $R(\infty) = 1-\psi(\theta(\infty))$ where
+\begin{equation}
+\theta(\infty) = \exp\left[-\frac{\beta}{\gamma}\left(1-\frac{\theta(\infty)\psi'(\theta(\infty))}{\psi'(1)}\right)\right]
+\end{equation}
+Full details are in the Appendix.
+
+\subsubsection{Example}
+\label{sec:MFSHex}
+\begin{figure}
+\parbox{\textwidth}{\includegraphics{mfsh_cum.pdf}
+\includegraphics{mfsh_inf.pdf}}
+\caption{\footnotesize \textbf{Mean Field Social Heterogeneity Example (section~\ref{sec:MFSHex}).}  Model predictions (dashed) match a simulated epidemic (solid) in a population of $5\times 10^5$ nodes.  The solid curve is a single simulation.  Time is set so $t=0$ when there is $1$\% cumulative incidence.}
+\label{fig:MFSHex}
+\end{figure}
+
+We take a population with degrees $1$, $5$, and $25$.  The proportions are chosen such that an equal number of stubs belong to each class: $P(1)= 25/31$, \ $P(5)=5/31$, and $P(25)=1/31$.  Thus
+\[
+\psi(x) = \frac{25x+5x^5+x^{25}}{31}
+\]
+%A neighbor has equal probability of having degree $1$, $5$, or $25$.  
+We set $\beta=\gamma=1$ and compare a simulation in a population of $5\times 10^5$ with theory in figure~\ref{fig:MFSHex}.
+
