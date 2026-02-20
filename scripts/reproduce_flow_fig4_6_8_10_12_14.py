@@ -5,6 +5,7 @@ from pathlib import Path
 
 import fitz
 import matplotlib.pyplot as plt
+import textwrap
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +30,34 @@ def _panel(ax, img, title: str):
     ax.axis("off")
 
 
+def _load_summary(txt_file: str, width: int = 88, max_lines: int = 5) -> str:
+    path = ROOT / txt_file
+    if not path.exists():
+        return "Summary unavailable."
+    raw = path.read_text(encoding="utf-8", errors="ignore").strip()
+    if not raw:
+        return "Summary unavailable."
+    flat = " ".join(raw.split())
+    # Keep notes as plain text; avoid matplotlib mathtext parsing errors.
+    flat = flat.replace("\\", "\\\\").replace("$", r"\$")
+    wrapped = textwrap.wrap(flat, width=width)
+    return "\n".join(wrapped[:max_lines])
+
+
+def _add_context(fig, model_tag: str, txt_file: str, y: float = 0.01):
+    summary = _load_summary(txt_file)
+    fig.text(
+        0.015,
+        y,
+        f"{model_tag} notes:\n{summary}",
+        ha="left",
+        va="bottom",
+        fontsize=8.5,
+        family="monospace",
+        bbox=dict(facecolor="#f6f6f6", edgecolor="#c9c9c9", boxstyle="round,pad=0.35"),
+    )
+
+
 def make_fig4(out_dir: Path):
     left = _to_img(ROOT / "edgeflux_AD_MFSH_all_flux.pdf")
     top = _to_img(ROOT / "standardflux.pdf")
@@ -39,6 +68,7 @@ def make_fig4(out_dir: Path):
     _panel(fig.add_subplot(gs[0, 1]), top, "Population Flow (S/I/R)")
     _panel(fig.add_subplot(gs[1, 1]), bottom, "Stub-Type Flow (pi_S/pi_I/pi_R)")
     fig.suptitle("Figure 4 Reproduction (Flow Diagram Assembly)")
+    _add_context(fig, "ad_MFSH", "extract_sec_ad_MFSH.txt")
     fig.savefig(out_dir / "fig4_flow_repro.png", dpi=220)
     fig.savefig(out_dir / "fig4_flow_repro.pdf")
     plt.close(fig)
@@ -53,6 +83,7 @@ def make_fig6(out_dir: Path):
     _panel(axes[1], mid, "Population Flow")
     _panel(axes[2], right, "Stub-Type Flow")
     fig.suptitle("Figure 6 Reproduction (Flow Diagram Assembly)")
+    _add_context(fig, "DFD", "extract_sec_DFD.txt")
     fig.savefig(out_dir / "fig6_flow_repro.png", dpi=220)
     fig.savefig(out_dir / "fig6_flow_repro.pdf")
     plt.close(fig)
@@ -67,6 +98,7 @@ def make_fig8(out_dir: Path):
     _panel(axes[1], mid, "Population Flow")
     _panel(axes[2], right, "Active/Dormant Stub-Type Flow")
     fig.suptitle("Figure 8 Reproduction (Flow Diagram Assembly)")
+    _add_context(fig, "DC", "extract_sec_DC.txt")
     fig.savefig(out_dir / "fig8_flow_repro.png", dpi=220)
     fig.savefig(out_dir / "fig8_flow_repro.pdf")
     plt.close(fig)
@@ -79,6 +111,7 @@ def make_fig10(out_dir: Path):
     _panel(axes[0], left, "Edge Flux (Expected Degree)")
     _panel(axes[1], right, "Population Flow")
     fig.suptitle("Figure 10 Reproduction (Flow Diagram Assembly)")
+    _add_context(fig, "MP", "extract_sec_MP.txt", y=0.02)
     fig.savefig(out_dir / "fig10_flow_repro.png", dpi=220)
     fig.savefig(out_dir / "fig10_flow_repro.pdf")
     plt.close(fig)
@@ -94,6 +127,7 @@ def make_fig12(out_dir: Path):
     _panel(fig.add_subplot(gs[0, 1]), top, "Population Flow (S/I/R)")
     _panel(fig.add_subplot(gs[1, 1]), bottom, "Edge-Type Flow (Pi_S/Pi_I/Pi_R)")
     fig.suptitle("Figure 12 Reproduction (Flow Diagram Assembly)")
+    _add_context(fig, "ed_MFSH", "extract_sec_ed_MFSH.txt")
     fig.savefig(out_dir / "fig12_flow_repro.png", dpi=220)
     fig.savefig(out_dir / "fig12_flow_repro.pdf")
     plt.close(fig)
@@ -109,6 +143,7 @@ def make_fig14(out_dir: Path):
     _panel(fig.add_subplot(gs[0, 1]), top, "Population Flow (S/I/R)")
     _panel(fig.add_subplot(gs[1, 1]), bottom, "Edge-Type Flow (Pi_S/Pi_I/Pi_R)")
     fig.suptitle("Figure 14 Reproduction (Flow Diagram Assembly)")
+    _add_context(fig, "DVD", "extract_sec_DVD.txt")
     fig.savefig(out_dir / "fig14_flow_repro.png", dpi=220)
     fig.savefig(out_dir / "fig14_flow_repro.pdf")
     plt.close(fig)
